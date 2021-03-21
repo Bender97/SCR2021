@@ -2,20 +2,20 @@
 altro problema di system: fargli aprire una shell ed ottenere root
 	problema sanificato in ubuntu grazie al fatto che system apre una sh che linka a dash, la quale fa drop dei privilegi
 
-	per rimuovere la contromisura imposta da sh->dash, basta linkare sh a zsh, che non fa drop dei privilegi
+> per rimuovere la contromisura imposta da sh->dash, basta linkare sh a zsh, che non fa drop dei privilegi
 
-		PROBLEMA: in Ubuntu 18.04 non c'è zsh (è la shell di Arch Linux, fonte: https://wiki.ubuntu-it.org/Programmazione/CambiareShell)
-		basta installarla, comunque
+PROBLEMA: in Ubuntu 18.04 non c'è zsh (è la shell di Arch Linux, fonte: https://wiki.ubuntu-it.org/Programmazione/CambiareShell)
+	basta installarla, comunque
 
-		# Before experiment: link /bin/sh to /bin/zsh
-		$ sudo ln -sf /bin/zsh /bin/sh
+	# Before experiment: link /bin/sh to /bin/zsh
+	$ sudo ln -sf /bin/zsh /bin/sh
 
-		# After experiment: remember to change it back
-		$ sudo ln -sf /bin/dash /bin/sh
+	# After experiment: remember to change it back
+	$ sudo ln -sf /bin/dash /bin/sh
 
-		l'experiment, è usare catall con system(buf) alla fine, facendolo girare con:
-			./catall "aaa; /bin/sh"
-				## nota bene: virgolette NeCeSsArIe
+	l'experiment, è usare catall con system(buf) alla fine, facendolo girare con:
+		./catall "aaa; /bin/sh"
+			## nota bene: virgolette NeCeSsArIe
 
 
 facciamo una shell
