@@ -2,12 +2,12 @@
 
 	root:x:0:0:root:/root:/bin/bash
 	1) nome della login
-		 2) una volta c'era la password. Adesso se c'è la x vuol dire che la password è nel file shadow
-		   3) user ID (UID)
-		     4) group ID
-		       5) group name
-		       		6) home directory
-		       			   7) shell
+	     2) una volta c'era la password. Adesso se c'è la x vuol dire che la password è nel file shadow
+	       3) user ID (UID)
+		 4) group ID
+		   5) group name
+		         6) home directory
+		       	       7) shell
 tutti gli account che seguono, sono "messi in sicurezza" dal fatto che hanno come shell "/usr/sbin/nologin".
 	Cos'è nologin? Sapete come funziona la definizione della shell, quando completi l'operazione di autenticazione con login e password, ti viene attivata quella shell.
 	/bin/bash -> ti apre bash
