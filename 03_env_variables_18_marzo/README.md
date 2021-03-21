@@ -37,7 +37,7 @@ Anche le variabili d'ambiente vengono sovrascritte!! Ecco perché si usa la vers
 
 modifiche suggerite a main1:
 	non terminare con NULL newenv
-		(vedere codice main2.c)
+```(vedere codice main2.c) ```
 		boh, ho provato e non stampa nulla, come nel caso switch '1'
 
 # Dove stanno in memoria le variabili di ambiente?
