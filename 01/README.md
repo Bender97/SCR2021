@@ -72,12 +72,11 @@ rieseguo il codice. WHOPS! Non funziona. Perché?
 	execv("/bin/cat", &(argv[1]));
 
 Ogni funzione della famiglia exec vuole, come path del programma da eseguire, il suo path assoluto!
-	* Item system: è stato sanitizzato per non eseguire comandi senza aver fatto il drop dei privilegi (torna a quella di partenza)
-	* Item exec: mantiene i privilegi ma non può essere attaccata tramite variabile d'ambiente
-		è suscettibile a:
-			* Item andare in /bin/ e sostituire il programma che viene chiamato
-			* Item solo che, io non ho diritti di scrittura su /bin/
-
+* system: è stato sanitizzato per non eseguire comandi senza aver fatto il drop dei privilegi (torna a quella di partenza)
+* exec: mantiene i privilegi ma non può essere attaccata tramite variabile d'ambiente <br>
+            è suscettibile a:
+  * andare in /bin/ e sostituire il programma che viene chiamato
+  * solo che, io non ho diritti di scrittura su /bin/
 
 dash: è una bash che droppa i privilegi quando parte come set-uid process (è una shell a privilegi ridotti)
 	da notare che con ls -l /bin/sh
