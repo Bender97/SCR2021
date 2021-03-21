@@ -7,7 +7,7 @@ Cosa sono le variabili di ambiente?
 	Sono state introdotte da unix, poi adottate da tutti gli OS successivi (es. Windows)
 
 
-char *envp[]
+char \*envp[]
 	must terminate with a NULL value to stop the iteration
 
 2 ways:
@@ -37,6 +37,7 @@ Anche le variabili d'ambiente vengono sovrascritte!! Ecco perché si usa la vers
 
 modifiche suggerite a main1:
 	non terminare con NULL newenv
+
 ```(vedere codice main2.c) ```
 		boh, ho provato e non stampa nulla, come nel caso switch '1'
 
@@ -56,8 +57,8 @@ Possiamo identificare 4 zone principali (nell'immagine della slide, gli indirizz
  	char \*\* argv, che punta ad argv[0] di cui al punto 3
  	int argc
 
-/** di solito, un int nel c ha la dimensione dei registri della macchina
-	perché dovrebbe essere il massimo dell'efficienza **/
+> di solito, un int nel c ha la dimensione dei registri della macchina
+	perché dovrebbe essere il massimo dell'efficienza
 
 ## il programma env (per info, fare man env)
 Può essere usato
@@ -89,19 +90,19 @@ sh, bash, dash, zsh, eccetera
 	Da lì in poi, ogni shell puù modificare il suo. Perché?
 		Una shell è sia una command line interface sia un "ambiente di programmazione", quindi per fare girare uno script, ad esempio.
 
-	FOO=bar
-	echo $FOO
-	unset FOO # questo rimuove la variabile FOO della shell
-	echo $FOO
+	$ FOO=bar
+	$ echo $FOO
+	$ unset FOO # questo rimuove la variabile FOO della shell
+	$ echo $FOO
 
-	unset PATH	# questo rimuove la variabile PATH della shell, ovvero la copia locale della variabile d'ambiente.
+	$ unset PATH	# questo rimuove la variabile PATH della shell, ovvero la copia locale della variabile d'ambiente.
 
 ## lo pseudo file system /proc
 è una cartella, che ha una cartella per ogni processo chiamata con il PID.
 La cartella di un processo contiene anche l'environment del processo
 	
-	strings # programma che mostra le stringhe di testo stampabili in un file (di default, lunghe almeno 4 caratteri)
-	strings /proc/$$/environ 	# $$ è uno shell escape per il PID corrente
+	$ strings # programma che mostra le stringhe di testo stampabili in un file (di default, lunghe almeno 4 caratteri)
+	$ strings /proc/$$/environ 	# $$ è uno shell escape per il PID corrente
 				# stampa l'environment della shell
 
 env fa vedere l'environment ereditato! (quello su cui gira env)
@@ -109,20 +110,20 @@ env fa vedere l'environment ereditato! (quello su cui gira env)
 
 normalmente non si vedono differenze, ma se si usa **env** per fare modifiche all'ambiente, allora si
 	
-	env | grep LOGNAME
-		LOGNAME=seed
-	strings /proc/$$/environ | grep LOGNAME
-		LOGNAME=seed
-	LOGNAME="bob"		# con questo, modifico la variabile shell, non la variabile d'ambiente
-	env | grep LOGNAME
+	$ env | grep LOGNAME
+	LOGNAME=seed
+	$ strings /proc/$$/environ | grep LOGNAME
+	LOGNAME=seed
+	$ LOGNAME="bob"		# con questo, modifico la variabile shell, non la variabile d'ambiente
+	$ env | grep LOGNAME
 	LOGNAME = "bob"
-	strings /proc/$$/environ | grep LOGNAME
-		LOGNAME=seed
+	$ strings /proc/$$/environ | grep LOGNAME
+	LOGNAME=seed
       
-	unset LOGNAME
-	echo $LOGNAME	# come fare env
-    # vuoto cosmico
-	strings /proc/$$/environ | grep LOGNAME
+	$ unset LOGNAME
+	$ echo $LOGNAME	# come fare env
+    vuoto cosmico
+	$ strings /proc/$$/environ | grep LOGNAME
 	LOGNAME=seed
 
 Quando la shell forka e fa exec per eseguire un comando:
@@ -136,22 +137,22 @@ Attenzione, è possibile non fare ereditare variabili d'ambiente (globali) ad un
 	se faccio unset di una variabile shell (locale), questa non verrà propagata
 
 
-	FOO=bar 		# NON marcata per export
-	export FOO=bar 	#     marcata per export
+	$ FOO=bar 		# NON marcata per export
+	$ export FOO=bar 	#     marcata per export
 
 
 quindi: Variabili d'ambiente ricevute dal processo figlio (che si copia nelle sue variabili interne) sono le variabili shell copia dell'ambiente che il padre aveva ereditato + le variabili di shell che il padre ha settato e marcato per l'export
 
 
 # Qual è la attack surface creata dalle variabili d'ambiente?
-## dove sta il pericolo
+## Dove sta il pericolo?
 Ci sono diverse componenti del sistema che usano le variabili d'ambiente.
 Poiché queste sono modificabili dall'utente, bisogna fare in modo che le parti del sistema non prendino una brutta strada usandole.
 esempio di parti del sistema che usano variabili d'ambiente: 
-* linker  # per trovare i pezzi e risolvere i simboli
-* codice all'interno dell'applicazione # per lanciare programmi esterni, per trovare le librerie, o per usarle direttamente
+* linker  *# per trovare i pezzi e risolvere i simboli*
+* codice all'interno dell'applicazione *# per lanciare programmi esterni, per trovare le librerie, o per usarle direttamente*
 
-# danni derivati da applicazione che usa variabili d'ambiente *unsafe*
+# Danni derivati da applicazione che usa variabili d'ambiente *unsafe*
 Ho un demone che deve fornire un servizio. Se so che va in crash con un certo input, posso interrompere il servizio in questo modo: *Denial Of Service*
 	i.e. Ping of Death: fa crashare Windows
 Se il servizio ha un restart automatico?
