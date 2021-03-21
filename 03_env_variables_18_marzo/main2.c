@@ -24,8 +24,8 @@ int main(int argc, char *argv[], char *envp[]) {
 	// Construct the environment variable array
 	newenv[0] = "AAA=aaa";
 	newenv[1] = "BBB=bbb";
-	newenv[2] = NULL;
-
+	//newenv[2] = NULL;
+	//newenv[2] = "CCC=ccc";
 	switch(argv[1][0]) {
 		case '1': // Passing no environment variable
 			printf("passing NULL to execve\n");
