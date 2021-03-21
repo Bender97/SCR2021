@@ -1,4 +1,4 @@
-
+# PRIVILEGE ESCALATION USING zsh
 altro problema di system: fargli aprire una shell ed ottenere root
 	problema sanificato in ubuntu grazie al fatto che system apre una sh che linka a dash, la quale fa drop dei privilegi
 
@@ -31,10 +31,10 @@ come invocare programmi in modo sicuro?
 	se usiamo execv or execl devo dargli il path completo, quindi il programma è esattamente quello che gli dico io
 	però esistono versioni che ereditano l'ambiente dalla shell di partenza, quindi anche il path, e quindi anche l'ordine con cui vado a cercare gli eseguibili. (execp)
 
-attacco via environment variable
+# attacco via environment variable
 	(vedi codice root-ls.c)
-		il codice usa:
-			execlp("ls", "ls", argv[1], (const char* ) NULL);
+il codice usa:
+	```execlp("ls", "ls", argv[1], (const char* ) NULL);```
 
 una volta che so che c'è un programma che usa execlp, non ho bisogno di avere diritti di root per ottenere una shell di root.
 
