@@ -1,6 +1,4 @@
-vi /etc/passwd
-
-come è formattato?
+# come è formattato vi /etc/passwd   ?
 
 	root:x:0:0:root:/root:/bin/bash
 	1) nome della login
@@ -17,14 +15,14 @@ tutti gli account che seguono, sono "messi in sicurezza" dal fatto che hanno com
 	/sync	  -> fa il writethrough dei dischi. Tutti i dati in memoria vengono effettivamente scritti nei dischi (cache nel sistema operativo flushate. Ormai non più molto utilizzato perché adesso i dischi magnetici o SSD hanno tipicamente una cache loro interna, quindi il cache viene delegato a loro stessi. Linux è ancora simil-anni 70, quindi ha ancora meccanismi "legacy")
 	/bin/false -> do nothing, unsuccessfully (un due di picche silente)
 
-	attack con campi assenti (le virgole)
+suscettibile all'attacco con campi assenti (le virgole)
 
 
 
-GOAL: se io sono un user non root, voglio rendere possibile "cat" a tutti
+# GOAL: se io sono un user non root, voglio rendere possibile "cat" a tutti
 
-	scrivo catall.c
-
+scrivo catall.c
+```
 		#include <stdio.h>
 		#include <stdlib.h>
 		#include <string.h>
@@ -43,7 +41,7 @@ GOAL: se io sono un user non root, voglio rendere possibile "cat" a tutti
 			}
 			return 0;
 		}
-
+```
 	faccio eseguire il codice con:
 		./catall catall.c /etc/passwd /etc/shadow
 
