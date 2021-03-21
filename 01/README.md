@@ -42,49 +42,45 @@ scrivo catall.c
 			return 0;
 		}
 ```
-	faccio eseguire il codice con:
-		./catall catall.c /etc/passwd /etc/shadow
+faccio eseguire il codice con:
+	```./catall catall.c /etc/passwd /etc/shadow```
 
-	legge tutto tranne shadow: permission denied
-	perché è un programma NON setUID
-
+legge tutto tranne shadow: permission denied
+perché è un programma NON setUID
+```
 	chown root catall
-		FAIL: non posso farlo, operation not permitted (devo usare sudo)
+	FAIL: non posso farlo, operation not permitted (devo usare sudo)
 	sudo bash
 	ls -l	# per verificare che sono sempre sullo stesso path
 	chown root catall 
 	ls -l 	# verifico che catall abbia owner root
 	exit	# per uscire da bash root
-
-	ora, se rieseguo il codice, ottengo lo stesso risultato (permission denied con shadow)
-		il programma è di root ma chi lo sta eseguendo è sempre seed
-		bisogna aggiungere setUID
-
+```
+ora, se rieseguo il codice, ottengo lo stesso risultato (permission denied con shadow)
+	il programma è di root ma chi lo sta eseguendo è sempre seed
+	bisogna aggiungere setUID
+```
 	sudo bash
 	chmod 4755 catall
 	ls -l 	# verifico che catall sia setUID
 	exit
+```
+rieseguo il codice. WHOPS! Non funziona. Perché?
+	system è sanitizzato per setUID. Downgrada l'user al suo real UID
+	dobbiamo usare exec!
 
-	rieseguo il codice. WHOPS! Non funziona. Perché?
-		system è sanitizzato per setUID. Downgrada l'user al suo real UID
+	execv("/bin/cat", &(argv[1]));
 
-		dobbiamo usare exec!
-
-			execv("/bin/cat", &(argv[1]));
-
-		ogni funzione della famiglia exec vuole, come path del programma da eseguire, il suo path assoluto!
-
-		system: è stato sanitizzato per non eseguire comandi senza aver fatto il drop dei privilegi (torna a quella di partenza)
-		exec: mantiene i privilegi ma non può essere attaccata tramite variabile d'ambiente
-					è suscettibile a:
-						andare in /bin/ e sostituire il programma che viene chiamato
-							solo che, io non ho diritti di scrittura su /bin/
-
+Ogni funzione della famiglia exec vuole, come path del programma da eseguire, il suo path assoluto!
+	*system: è stato sanitizzato per non eseguire comandi senza aver fatto il drop dei privilegi (torna a quella di partenza)
+	*exec: mantiene i privilegi ma non può essere attaccata tramite variabile d'ambiente
+		è suscettibile a:
+			*andare in /bin/ e sostituire il programma che viene chiamato
+			*solo che, io non ho diritti di scrittura su /bin/
 
 
 	dash: è una bash che droppa i privilegi quando parte come set-uid process (è una shell a privilegi ridotti)
 		da notare che con ls -l /bin/sh
 				viene fuori che sh -> dash. Ovver, sh linka a dash
-
 				questo c'è in ubuntu 16.04 (vedere slides, A Note)
 
