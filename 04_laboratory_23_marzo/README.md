@@ -14,15 +14,6 @@ execlp -> execve
 ## shell creation
 	execve("./root-ls", ["./root-ls", "."], 0x7ffd6dce1eb8 /* 64 vars */) = 0
 
-## path expansion
-	--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=17271, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
-	execve("/usr/local/sbin/ls", ["ls", "."], 0x7ffc7f005810 /* 64 vars */) = -1 ENOENT (No such file or directory)
-	execve("/usr/local/bin/ls", ["ls", "."], 0x7ffc7f005810 /* 64 vars */) = -1 ENOENT (No such file or directory)
-	execve("/usr/sbin/ls", ["ls", "."], 0x7ffc7f005810 /* 64 vars */) = -1 ENOENT (No such file or directory)
-	execve("/usr/bin/ls", ["ls", "."], 0x7ffc7f005810 /* 64 vars */) = -1 ENOENT (No such file or directory)
-	execve("/sbin/ls", ["ls", "."], 0x7ffc7f005810 /* 64 vars */) = -1 ENOENT (No such file or directory)
-	execve("/bin/ls", ["ls", "."], 0x7ffc7f005810 /* 64 vars */) = 0
-
 ## io streams: file descriptor
 fcntl - manipulate file descriptor
 File descriptor flags: 
@@ -38,5 +29,16 @@ File descriptor flags:
 	access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
 	access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
 
->   /etc/ld.so.nohwcap
->   When this file is present the dynamic linker will load the non-optimized version of a library, even if the CPU supports the optimized version.
+/etc/ld.so.nohwcap
+	When this file is present the dynamic linker will load the non-optimized version of a library, even if the CPU supports the optimized version.
+
+
+
+## path expansion
+	--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=17271, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+	execve("/usr/local/sbin/ls", ["ls", "."], 0x7ffc7f005810 /* 64 vars */) = -1 ENOENT (No such file or directory)
+	execve("/usr/local/bin/ls", ["ls", "."], 0x7ffc7f005810 /* 64 vars */) = -1 ENOENT (No such file or directory)
+	execve("/usr/sbin/ls", ["ls", "."], 0x7ffc7f005810 /* 64 vars */) = -1 ENOENT (No such file or directory)
+	execve("/usr/bin/ls", ["ls", "."], 0x7ffc7f005810 /* 64 vars */) = -1 ENOENT (No such file or directory)
+	execve("/sbin/ls", ["ls", "."], 0x7ffc7f005810 /* 64 vars */) = -1 ENOENT (No such file or directory)
+	execve("/bin/ls", ["ls", "."], 0x7ffc7f005810 /* 64 vars */) = 0
