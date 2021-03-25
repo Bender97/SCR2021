@@ -73,7 +73,29 @@ $ unset -f foo
 ```
 
 ### Come si possono passare le funzioni definite in una shell a processi figli?
-* Approccio 1:
+* Approccio 1:	# funzione diretta
 	1) definisco la funzione nel processo padre
 	2) *export -f foo* 	# senza -f, esporterei la variabile foo (vuota)
 	3) fatto, il figlio la otterrà
+* Approccio 2: 	# variabile che contiene la funzione
+	1) foo='() { echo "hello world"; } '		# tra apici: non viene interpretato dalla shell
+	2) export foo
+	3) bash_shellshock	# eseguo la shell figlia, quella pre-sanificazione
+	4) (child) echo $foo -> niente
+	5) (child) declare -f foo
+			-> interpreta la variabile come funzione! Perché? Nel momento in cui la shell figlia ha ottenuto la variabile, l'ha interpretata. *Gli apici vengono consumati dalla shell genitrice*, quindi la figlia riceve foo senza apici. Ergo una funzione.
+
+Differenze. <br>
+	* nel primo caso, occorre che la shell genitrice sia una shell. Oppure un programma che agisce e manipola le variabili esattamente come una shell
+	* nel secondo caso, qualunque programma può settare una variabile di ambiente (es, setenv() in C ). Quando questo ambiente verrà ereditato dal processo figlio, se questo processo figlio è una shell, interpreterà in automatico quella variabile d'ambiente per settare una funzione.
+
+### Vulnerability
+Se negli apici c'è anche un comando, dopo la dichiarazione della funzione, quel comando verrà eseguito dalla shell figlia.
+```
+	foo = '() {echo "hello world"; }; echo "extra";'
+```
+la shell figlia si troverà la funzione, ma eseguirà pure il comando dopo.
+> Il baco stava nell'ingenuo riuso di codice: parse_and_execute(string)
+
+Ma perché potrebbe essere **pericoloso**?
+Se il processo target è un processo server, o comunque un processo privilegiato, il processo figlio eseguirà comandi con privilegi (security breach)
