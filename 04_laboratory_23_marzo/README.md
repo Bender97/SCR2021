@@ -53,11 +53,11 @@ the 64 vars passed at the end are the environment variables
  ```	
  		mmap(NULL, 260382, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f8c5768a000
  ```
- 		* *NULL* -> If addr is NULL, then the kernel chooses the address at which to create the mapping;
+ 		 * *NULL* -> If addr is NULL, then the kernel chooses the address at which to create the mapping;
  				this  is the most portable method of creating a new mapping.
- 		* *260382* -> the length of the mapping (in bytes)
- 		* *PROT_READ* ->  Pages may be read.
- 		* *MAP_PRIVATE* -> Create  a private copy-on-write mapping.  Updates to the mapping
-              			are not visible to other processes mapping the  same  file,  and
+ 		 * *260382* -> the length of the mapping (in bytes)
+ 		 * *PROT_READ* ->  Pages may be read.
+ 		 * *MAP_PRIVATE* -> Create  a private copy-on-write mapping.  Updates to the mapping
+              			are not visible to other processes mapping the  same  file, and
               			are  not carried through to the underlying file.
-        * *3* -> The file descriptor of the file which has to be mapped.
+         * *3* -> The file descriptor of the file which has to be mapped.
