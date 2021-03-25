@@ -49,16 +49,14 @@ the 64 vars passed at the end are the environment variables
  * **brk**:  change data segment size, altering the program break that defines end of process’s data segment.
  	* example:
  		```	
- 		brk(NULL)                               = 0x55c169d9e000
- 		```	
+ 		brk(NULL)                               = 0x55c169d9e000 ```	
  		 is the process asking where its heap memory ends
  * **mmap**: map files or devices into memory
  	* mmap() creates a new mapping in the virtual address space of the calling process
  			When a file is mapped to a process address space, *the file can be accessed like an array in the program*
  	* example:
  		```	
- 		mmap(NULL, 260382, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f8c5768a000
- 		```
+ 		mmap(NULL, 260382, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f8c5768a000 ```
  		 * *NULL* -> If addr is NULL, then the kernel chooses the address at which to create the mapping;
  				this  is the most portable method of creating a new mapping.
  		 * *260382* -> the length of the mapping (in bytes)
