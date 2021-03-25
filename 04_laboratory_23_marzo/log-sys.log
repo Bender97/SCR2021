@@ -1,0 +1,702 @@
+execve("./root-ls-sys", ["./root-ls-sys", "."], 0x7ffcd16f37e0 /* 65 vars */) = 0
+access("/etc/suid-debug", F_OK)         = -1 ENOENT (No such file or directory)
+brk(NULL)                               = 0x5574e6fc7000
+fcntl(0, F_GETFD)                       = 0
+fcntl(1, F_GETFD)                       = 0
+fcntl(2, F_GETFD)                       = 0
+access("/etc/suid-debug", F_OK)         = -1 ENOENT (No such file or directory)
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=260382, ...}) = 0
+mmap(NULL, 260382, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f00c7822000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20\35\2\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=2030928, ...}) = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f00c7820000
+mmap(NULL, 4131552, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f00c7248000
+mprotect(0x7f00c742f000, 2097152, PROT_NONE) = 0
+mmap(0x7f00c762f000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e7000) = 0x7f00c762f000
+mmap(0x7f00c7635000, 15072, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f00c7635000
+close(3)                                = 0
+arch_prctl(ARCH_SET_FS, 0x7f00c78214c0) = 0
+mprotect(0x7f00c762f000, 16384, PROT_READ) = 0
+mprotect(0x5574e6e09000, 4096, PROT_READ) = 0
+mprotect(0x7f00c7862000, 4096, PROT_READ) = 0
+munmap(0x7f00c7822000, 260382)          = 0
+rt_sigaction(SIGINT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+clone(strace: Process 22447 attached
+child_stack=NULL, flags=CLONE_PARENT_SETTID|SIGCHLD, parent_tidptr=0x7ffd4eb08a8c) = 22447
+[pid 22447] rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040},  <unfinished ...>
+[pid 22446] wait4(22447,  <unfinished ...>
+[pid 22447] <... rt_sigaction resumed> NULL, 8) = 0
+[pid 22447] rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, NULL, 8) = 0
+[pid 22447] rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+[pid 22447] execve("/bin/sh", ["sh", "-c", "whoami"], 0x7ffd4eb09120 /* 65 vars */) = 0
+[pid 22447] brk(NULL)                   = 0x5651644e1000
+[pid 22447] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22447] access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+[pid 22447] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+[pid 22447] fstat(3, {st_mode=S_IFREG|0644, st_size=260382, ...}) = 0
+[pid 22447] mmap(NULL, 260382, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f1bc5f2e000
+[pid 22447] close(3)                    = 0
+[pid 22447] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22447] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+[pid 22447] read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20\35\2\0\0\0\0\0"..., 832) = 832
+[pid 22447] fstat(3, {st_mode=S_IFREG|0755, st_size=2030928, ...}) = 0
+[pid 22447] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1bc5f2c000
+[pid 22447] mmap(NULL, 4131552, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1bc5954000
+[pid 22447] mprotect(0x7f1bc5b3b000, 2097152, PROT_NONE) = 0
+[pid 22447] mmap(0x7f1bc5d3b000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e7000) = 0x7f1bc5d3b000
+[pid 22447] mmap(0x7f1bc5d41000, 15072, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f1bc5d41000
+[pid 22447] close(3)                    = 0
+[pid 22447] arch_prctl(ARCH_SET_FS, 0x7f1bc5f2d540) = 0
+[pid 22447] mprotect(0x7f1bc5d3b000, 16384, PROT_READ) = 0
+[pid 22447] mprotect(0x565164006000, 8192, PROT_READ) = 0
+[pid 22447] mprotect(0x7f1bc5f6e000, 4096, PROT_READ) = 0
+[pid 22447] munmap(0x7f1bc5f2e000, 260382) = 0
+[pid 22447] getuid()                    = 1000
+[pid 22447] getgid()                    = 1000
+[pid 22447] getpid()                    = 22447
+[pid 22447] rt_sigaction(SIGCHLD, {sa_handler=0x565163dfd200, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f1bc5993040}, NULL, 8) = 0
+[pid 22447] geteuid()                   = 1000
+[pid 22447] brk(NULL)                   = 0x5651644e1000
+[pid 22447] brk(0x565164502000)         = 0x565164502000
+[pid 22447] getppid()                   = 22446
+[pid 22447] stat("/home/fusy/Documents/SCR2021/04_laboratory_23_marzo", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+[pid 22447] stat(".", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+[pid 22447] geteuid()                   = 1000
+[pid 22447] getegid()                   = 1000
+[pid 22447] rt_sigaction(SIGINT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 22447] rt_sigaction(SIGINT, {sa_handler=0x565163dfd200, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f1bc5993040}, NULL, 8) = 0
+[pid 22447] rt_sigaction(SIGQUIT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 22447] rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f1bc5993040}, NULL, 8) = 0
+[pid 22447] rt_sigaction(SIGTERM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 22447] rt_sigaction(SIGTERM, {sa_handler=SIG_DFL, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f1bc5993040}, NULL, 8) = 0
+[pid 22447] stat("/usr/local/sbin/whoami", 0x7fff55b4ecb0) = -1 ENOENT (No such file or directory)
+[pid 22447] stat("/usr/local/bin/whoami", 0x7fff55b4ecb0) = -1 ENOENT (No such file or directory)
+[pid 22447] stat("/usr/sbin/whoami", 0x7fff55b4ecb0) = -1 ENOENT (No such file or directory)
+[pid 22447] stat("/usr/bin/whoami", {st_mode=S_IFREG|0755, st_size=30904, ...}) = 0
+[pid 22447] clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f1bc5f2d810) = 22448
+strace: Process 22448 attached
+[pid 22447] wait4(-1,  <unfinished ...>
+[pid 22448] execve("/usr/bin/whoami", ["whoami"], 0x5651644e2098 /* 65 vars */) = 0
+[pid 22448] brk(NULL)                   = 0x55a36de91000
+[pid 22448] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22448] access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+[pid 22448] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+[pid 22448] fstat(3, {st_mode=S_IFREG|0644, st_size=260382, ...}) = 0
+[pid 22448] mmap(NULL, 260382, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe63fbf4000
+[pid 22448] close(3)                    = 0
+[pid 22448] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22448] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+[pid 22448] read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20\35\2\0\0\0\0\0"..., 832) = 832
+[pid 22448] fstat(3, {st_mode=S_IFREG|0755, st_size=2030928, ...}) = 0
+[pid 22448] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe63fbf2000
+[pid 22448] mmap(NULL, 4131552, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe63f61a000
+[pid 22448] mprotect(0x7fe63f801000, 2097152, PROT_NONE) = 0
+[pid 22448] mmap(0x7fe63fa01000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e7000) = 0x7fe63fa01000
+[pid 22448] mmap(0x7fe63fa07000, 15072, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe63fa07000
+[pid 22448] close(3)                    = 0
+[pid 22448] arch_prctl(ARCH_SET_FS, 0x7fe63fbf3540) = 0
+[pid 22448] mprotect(0x7fe63fa01000, 16384, PROT_READ) = 0
+[pid 22448] mprotect(0x55a36bed4000, 4096, PROT_READ) = 0
+[pid 22448] mprotect(0x7fe63fc34000, 4096, PROT_READ) = 0
+[pid 22448] munmap(0x7fe63fbf4000, 260382) = 0
+[pid 22448] brk(NULL)                   = 0x55a36de91000
+[pid 22448] brk(0x55a36deb2000)         = 0x55a36deb2000
+[pid 22448] openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+[pid 22448] fstat(3, {st_mode=S_IFREG|0644, st_size=3008736, ...}) = 0
+[pid 22448] mmap(NULL, 3008736, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe63f33b000
+[pid 22448] close(3)                    = 0
+[pid 22448] geteuid()                   = 1000
+[pid 22448] socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+[pid 22448] connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+[pid 22448] close(3)                    = 0
+[pid 22448] socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+[pid 22448] connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+[pid 22448] close(3)                    = 0
+[pid 22448] openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 3
+[pid 22448] fstat(3, {st_mode=S_IFREG|0644, st_size=556, ...}) = 0
+[pid 22448] read(3, "# /etc/nsswitch.conf\n#\n# Example"..., 4096) = 556
+[pid 22448] read(3, "", 4096)           = 0
+[pid 22448] close(3)                    = 0
+[pid 22448] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+[pid 22448] fstat(3, {st_mode=S_IFREG|0644, st_size=260382, ...}) = 0
+[pid 22448] mmap(NULL, 260382, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe63fbf4000
+[pid 22448] close(3)                    = 0
+[pid 22448] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22448] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnss_compat.so.2", O_RDONLY|O_CLOEXEC) = 3
+[pid 22448] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\240\22\0\0\0\0\0\0"..., 832) = 832
+[pid 22448] fstat(3, {st_mode=S_IFREG|0644, st_size=39744, ...}) = 0
+[pid 22448] mmap(NULL, 2136256, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe63f131000
+[pid 22448] mprotect(0x7fe63f139000, 2097152, PROT_NONE) = 0
+[pid 22448] mmap(0x7fe63f339000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8000) = 0x7fe63f339000
+[pid 22448] close(3)                    = 0
+[pid 22448] mprotect(0x7fe63f339000, 4096, PROT_READ) = 0
+[pid 22448] munmap(0x7fe63fbf4000, 260382) = 0
+[pid 22448] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+[pid 22448] fstat(3, {st_mode=S_IFREG|0644, st_size=260382, ...}) = 0
+[pid 22448] mmap(NULL, 260382, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe63fbf4000
+[pid 22448] close(3)                    = 0
+[pid 22448] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22448] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnss_nis.so.2", O_RDONLY|O_CLOEXEC) = 3
+[pid 22448] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0p \0\0\0\0\0\0"..., 832) = 832
+[pid 22448] fstat(3, {st_mode=S_IFREG|0644, st_size=47576, ...}) = 0
+[pid 22448] mmap(NULL, 2143624, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe63ef25000
+[pid 22448] mprotect(0x7fe63ef30000, 2093056, PROT_NONE) = 0
+[pid 22448] mmap(0x7fe63f12f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xa000) = 0x7fe63f12f000
+[pid 22448] close(3)                    = 0
+[pid 22448] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22448] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnsl.so.1", O_RDONLY|O_CLOEXEC) = 3
+[pid 22448] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220@\0\0\0\0\0\0"..., 832) = 832
+[pid 22448] fstat(3, {st_mode=S_IFREG|0644, st_size=97176, ...}) = 0
+[pid 22448] mmap(NULL, 2202200, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe63ed0b000
+[pid 22448] mprotect(0x7fe63ed22000, 2093056, PROT_NONE) = 0
+[pid 22448] mmap(0x7fe63ef21000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x16000) = 0x7fe63ef21000
+[pid 22448] mmap(0x7fe63ef23000, 6744, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe63ef23000
+[pid 22448] close(3)                    = 0
+[pid 22448] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22448] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnss_files.so.2", O_RDONLY|O_CLOEXEC) = 3
+[pid 22448] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P#\0\0\0\0\0\0"..., 832) = 832
+[pid 22448] fstat(3, {st_mode=S_IFREG|0644, st_size=47568, ...}) = 0
+[pid 22448] mmap(NULL, 2168632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe63eaf9000
+[pid 22448] mprotect(0x7fe63eb04000, 2093056, PROT_NONE) = 0
+[pid 22448] mmap(0x7fe63ed03000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xa000) = 0x7fe63ed03000
+[pid 22448] mmap(0x7fe63ed05000, 22328, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe63ed05000
+[pid 22448] close(3)                    = 0
+[pid 22448] mprotect(0x7fe63ed03000, 4096, PROT_READ) = 0
+[pid 22448] mprotect(0x7fe63ef21000, 4096, PROT_READ) = 0
+[pid 22448] mprotect(0x7fe63f12f000, 4096, PROT_READ) = 0
+[pid 22448] munmap(0x7fe63fbf4000, 260382) = 0
+[pid 22448] openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 3
+[pid 22448] lseek(3, 0, SEEK_CUR)       = 0
+[pid 22448] fstat(3, {st_mode=S_IFREG|0644, st_size=2401, ...}) = 0
+[pid 22448] mmap(NULL, 2401, PROT_READ, MAP_SHARED, 3, 0) = 0x7fe63fc33000
+[pid 22448] lseek(3, 2401, SEEK_SET)    = 2401
+[pid 22448] munmap(0x7fe63fc33000, 2401) = 0
+[pid 22448] close(3)                    = 0
+[pid 22448] fstat(1, {st_mode=S_IFREG|0644, st_size=13845, ...}) = 0
+[pid 22448] write(1, "fusy\n", 5fusy
+)       = 5
+[pid 22448] close(1)                    = 0
+[pid 22448] close(2)                    = 0
+[pid 22448] exit_group(0)               = ?
+[pid 22448] +++ exited with 0 +++
+[pid 22447] <... wait4 resumed> [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 22448
+[pid 22447] --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=22448, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+[pid 22447] rt_sigreturn({mask=[]})     = 22448
+[pid 22447] exit_group(0)               = ?
+[pid 22447] +++ exited with 0 +++
+<... wait4 resumed> [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 22447
+rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, NULL, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=22447, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+rt_sigaction(SIGINT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+clone(strace: Process 22449 attached
+child_stack=NULL, flags=CLONE_PARENT_SETTID|SIGCHLD, parent_tidptr=0x7ffd4eb08a8c) = 22449
+[pid 22446] wait4(22449,  <unfinished ...>
+[pid 22449] rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, NULL, 8) = 0
+[pid 22449] rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, NULL, 8) = 0
+[pid 22449] rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+[pid 22449] execve("/bin/sh", ["sh", "-c", "id"], 0x7ffd4eb09120 /* 65 vars */) = 0
+[pid 22449] brk(NULL)                   = 0x55882bcce000
+[pid 22449] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22449] access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+[pid 22449] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+[pid 22449] fstat(3, {st_mode=S_IFREG|0644, st_size=260382, ...}) = 0
+[pid 22449] mmap(NULL, 260382, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f568c0db000
+[pid 22449] close(3)                    = 0
+[pid 22449] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22449] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+[pid 22449] read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20\35\2\0\0\0\0\0"..., 832) = 832
+[pid 22449] fstat(3, {st_mode=S_IFREG|0755, st_size=2030928, ...}) = 0
+[pid 22449] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f568c0d9000
+[pid 22449] mmap(NULL, 4131552, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f568bb01000
+[pid 22449] mprotect(0x7f568bce8000, 2097152, PROT_NONE) = 0
+[pid 22449] mmap(0x7f568bee8000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e7000) = 0x7f568bee8000
+[pid 22449] mmap(0x7f568beee000, 15072, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f568beee000
+[pid 22449] close(3)                    = 0
+[pid 22449] arch_prctl(ARCH_SET_FS, 0x7f568c0da540) = 0
+[pid 22449] mprotect(0x7f568bee8000, 16384, PROT_READ) = 0
+[pid 22449] mprotect(0x55882baa1000, 8192, PROT_READ) = 0
+[pid 22449] mprotect(0x7f568c11b000, 4096, PROT_READ) = 0
+[pid 22449] munmap(0x7f568c0db000, 260382) = 0
+[pid 22449] getuid()                    = 1000
+[pid 22449] getgid()                    = 1000
+[pid 22449] getpid()                    = 22449
+[pid 22449] rt_sigaction(SIGCHLD, {sa_handler=0x55882b898200, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f568bb40040}, NULL, 8) = 0
+[pid 22449] geteuid()                   = 1000
+[pid 22449] brk(NULL)                   = 0x55882bcce000
+[pid 22449] brk(0x55882bcef000)         = 0x55882bcef000
+[pid 22449] getppid()                   = 22446
+[pid 22449] stat("/home/fusy/Documents/SCR2021/04_laboratory_23_marzo", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+[pid 22449] stat(".", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+[pid 22449] geteuid()                   = 1000
+[pid 22449] getegid()                   = 1000
+[pid 22449] rt_sigaction(SIGINT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 22449] rt_sigaction(SIGINT, {sa_handler=0x55882b898200, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f568bb40040}, NULL, 8) = 0
+[pid 22449] rt_sigaction(SIGQUIT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 22449] rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f568bb40040}, NULL, 8) = 0
+[pid 22449] rt_sigaction(SIGTERM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 22449] rt_sigaction(SIGTERM, {sa_handler=SIG_DFL, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f568bb40040}, NULL, 8) = 0
+[pid 22449] stat("/usr/local/sbin/id", 0x7fff98e102b0) = -1 ENOENT (No such file or directory)
+[pid 22449] stat("/usr/local/bin/id", 0x7fff98e102b0) = -1 ENOENT (No such file or directory)
+[pid 22449] stat("/usr/sbin/id", 0x7fff98e102b0) = -1 ENOENT (No such file or directory)
+[pid 22449] stat("/usr/bin/id", {st_mode=S_IFREG|0755, st_size=43224, ...}) = 0
+[pid 22449] clone(strace: Process 22450 attached
+child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f568c0da810) = 22450
+[pid 22449] wait4(-1,  <unfinished ...>
+[pid 22450] execve("/usr/bin/id", ["id"], 0x55882bccf098 /* 65 vars */) = 0
+[pid 22450] brk(NULL)                   = 0x564eb885f000
+[pid 22450] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22450] access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=260382, ...}) = 0
+[pid 22450] mmap(NULL, 260382, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7feffe5a5000
+[pid 22450] close(3)                    = 0
+[pid 22450] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libselinux.so.1", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20b\0\0\0\0\0\0"..., 832) = 832
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=154832, ...}) = 0
+[pid 22450] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7feffe5a3000
+[pid 22450] mmap(NULL, 2259152, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7feffe194000
+[pid 22450] mprotect(0x7feffe1b9000, 2093056, PROT_NONE) = 0
+[pid 22450] mmap(0x7feffe3b8000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x24000) = 0x7feffe3b8000
+[pid 22450] mmap(0x7feffe3ba000, 6352, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7feffe3ba000
+[pid 22450] close(3)                    = 0
+[pid 22450] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20\35\2\0\0\0\0\0"..., 832) = 832
+[pid 22450] fstat(3, {st_mode=S_IFREG|0755, st_size=2030928, ...}) = 0
+[pid 22450] mmap(NULL, 4131552, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7feffdda3000
+[pid 22450] mprotect(0x7feffdf8a000, 2097152, PROT_NONE) = 0
+[pid 22450] mmap(0x7feffe18a000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e7000) = 0x7feffe18a000
+[pid 22450] mmap(0x7feffe190000, 15072, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7feffe190000
+[pid 22450] close(3)                    = 0
+[pid 22450] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpcre.so.3", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 \25\0\0\0\0\0\0"..., 832) = 832
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=464824, ...}) = 0
+[pid 22450] mmap(NULL, 2560264, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7feffdb31000
+[pid 22450] mprotect(0x7feffdba1000, 2097152, PROT_NONE) = 0
+[pid 22450] mmap(0x7feffdda1000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x70000) = 0x7feffdda1000
+[pid 22450] close(3)                    = 0
+[pid 22450] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libdl.so.2", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\16\0\0\0\0\0\0"..., 832) = 832
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=14560, ...}) = 0
+[pid 22450] mmap(NULL, 2109712, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7feffd92d000
+[pid 22450] mprotect(0x7feffd930000, 2093056, PROT_NONE) = 0
+[pid 22450] mmap(0x7feffdb2f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7feffdb2f000
+[pid 22450] close(3)                    = 0
+[pid 22450] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0000b\0\0\0\0\0\0"..., 832) = 832
+[pid 22450] fstat(3, {st_mode=S_IFREG|0755, st_size=144976, ...}) = 0
+[pid 22450] mmap(NULL, 2221184, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7feffd70e000
+[pid 22450] mprotect(0x7feffd728000, 2093056, PROT_NONE) = 0
+[pid 22450] mmap(0x7feffd927000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x19000) = 0x7feffd927000
+[pid 22450] mmap(0x7feffd929000, 13440, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7feffd929000
+[pid 22450] close(3)                    = 0
+[pid 22450] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7feffe5a1000
+[pid 22450] arch_prctl(ARCH_SET_FS, 0x7feffe5a2040) = 0
+[pid 22450] mprotect(0x7feffe18a000, 16384, PROT_READ) = 0
+[pid 22450] mprotect(0x7feffd927000, 4096, PROT_READ) = 0
+[pid 22450] mprotect(0x7feffdb2f000, 4096, PROT_READ) = 0
+[pid 22450] mprotect(0x7feffdda1000, 4096, PROT_READ) = 0
+[pid 22450] mprotect(0x7feffe3b8000, 4096, PROT_READ) = 0
+[pid 22450] mprotect(0x564eb7cad000, 4096, PROT_READ) = 0
+[pid 22450] mprotect(0x7feffe5e5000, 4096, PROT_READ) = 0
+[pid 22450] munmap(0x7feffe5a5000, 260382) = 0
+[pid 22450] set_tid_address(0x7feffe5a2310) = 22450
+[pid 22450] set_robust_list(0x7feffe5a2320, 24) = 0
+[pid 22450] rt_sigaction(SIGRTMIN, {sa_handler=0x7feffd713cb0, sa_mask=[], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7feffd720980}, NULL, 8) = 0
+[pid 22450] rt_sigaction(SIGRT_1, {sa_handler=0x7feffd713d50, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART|SA_SIGINFO, sa_restorer=0x7feffd720980}, NULL, 8) = 0
+[pid 22450] rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+[pid 22450] prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+[pid 22450] statfs("/sys/fs/selinux", 0x7ffdf68ee100) = -1 ENOENT (No such file or directory)
+[pid 22450] statfs("/selinux", 0x7ffdf68ee100) = -1 ENOENT (No such file or directory)
+[pid 22450] brk(NULL)                   = 0x564eb885f000
+[pid 22450] brk(0x564eb8880000)         = 0x564eb8880000
+[pid 22450] openat(AT_FDCWD, "/proc/filesystems", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] fstat(3, {st_mode=S_IFREG|0444, st_size=0, ...}) = 0
+[pid 22450] read(3, "nodev\tsysfs\nnodev\ttmpfs\nnodev\tbd"..., 1024) = 393
+[pid 22450] read(3, "", 1024)           = 0
+[pid 22450] close(3)                    = 0
+[pid 22450] access("/etc/selinux/config", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=3008736, ...}) = 0
+[pid 22450] mmap(NULL, 3008736, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7feffd42f000
+[pid 22450] close(3)                    = 0
+[pid 22450] geteuid()                   = 1000
+[pid 22450] getuid()                    = 1000
+[pid 22450] getegid()                   = 1000
+[pid 22450] getgid()                    = 1000
+[pid 22450] openat(AT_FDCWD, "/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=2995, ...}) = 0
+[pid 22450] read(3, "# Locale name alias data base.\n#"..., 4096) = 2995
+[pid 22450] read(3, "", 4096)           = 0
+[pid 22450] close(3)                    = 0
+[pid 22450] openat(AT_FDCWD, "/usr/share/locale/en_US.UTF-8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/usr/share/locale/en_US.utf8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/usr/share/locale/en_US/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/usr/share/locale/en.UTF-8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/usr/share/locale/en.utf8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/usr/share/locale/en/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/usr/share/locale-langpack/en_US.UTF-8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/usr/share/locale-langpack/en_US.utf8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/usr/share/locale-langpack/en_US/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/usr/share/locale-langpack/en.UTF-8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/usr/share/locale-langpack/en.utf8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/usr/share/locale-langpack/en/LC_MESSAGES/coreutils.mo", O_RDONLY) = 3
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=578, ...}) = 0
+[pid 22450] mmap(NULL, 578, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7feffe5e4000
+[pid 22450] close(3)                    = 0
+[pid 22450] fstat(1, {st_mode=S_IFREG|0644, st_size=28623, ...}) = 0
+[pid 22450] socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+[pid 22450] connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+[pid 22450] close(3)                    = 0
+[pid 22450] socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+[pid 22450] connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+[pid 22450] close(3)                    = 0
+[pid 22450] openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=556, ...}) = 0
+[pid 22450] read(3, "# /etc/nsswitch.conf\n#\n# Example"..., 4096) = 556
+[pid 22450] read(3, "", 4096)           = 0
+[pid 22450] close(3)                    = 0
+[pid 22450] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=260382, ...}) = 0
+[pid 22450] mmap(NULL, 260382, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7feffe561000
+[pid 22450] close(3)                    = 0
+[pid 22450] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnss_compat.so.2", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\240\22\0\0\0\0\0\0"..., 832) = 832
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=39744, ...}) = 0
+[pid 22450] mmap(NULL, 2136256, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7feffd225000
+[pid 22450] mprotect(0x7feffd22d000, 2097152, PROT_NONE) = 0
+[pid 22450] mmap(0x7feffd42d000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8000) = 0x7feffd42d000
+[pid 22450] close(3)                    = 0
+[pid 22450] mprotect(0x7feffd42d000, 4096, PROT_READ) = 0
+[pid 22450] munmap(0x7feffe561000, 260382) = 0
+[pid 22450] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=260382, ...}) = 0
+[pid 22450] mmap(NULL, 260382, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7feffe561000
+[pid 22450] close(3)                    = 0
+[pid 22450] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnss_nis.so.2", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0p \0\0\0\0\0\0"..., 832) = 832
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=47576, ...}) = 0
+[pid 22450] mmap(NULL, 2143624, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7feffd019000
+[pid 22450] mprotect(0x7feffd024000, 2093056, PROT_NONE) = 0
+[pid 22450] mmap(0x7feffd223000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xa000) = 0x7feffd223000
+[pid 22450] close(3)                    = 0
+[pid 22450] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnsl.so.1", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220@\0\0\0\0\0\0"..., 832) = 832
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=97176, ...}) = 0
+[pid 22450] mmap(NULL, 2202200, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7feffcdff000
+[pid 22450] mprotect(0x7feffce16000, 2093056, PROT_NONE) = 0
+[pid 22450] mmap(0x7feffd015000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x16000) = 0x7feffd015000
+[pid 22450] mmap(0x7feffd017000, 6744, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7feffd017000
+[pid 22450] close(3)                    = 0
+[pid 22450] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22450] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnss_files.so.2", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P#\0\0\0\0\0\0"..., 832) = 832
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=47568, ...}) = 0
+[pid 22450] mmap(NULL, 2168632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7feffcbed000
+[pid 22450] mprotect(0x7feffcbf8000, 2093056, PROT_NONE) = 0
+[pid 22450] mmap(0x7feffcdf7000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xa000) = 0x7feffcdf7000
+[pid 22450] mmap(0x7feffcdf9000, 22328, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7feffcdf9000
+[pid 22450] close(3)                    = 0
+[pid 22450] mprotect(0x7feffcdf7000, 4096, PROT_READ) = 0
+[pid 22450] mprotect(0x7feffd015000, 4096, PROT_READ) = 0
+[pid 22450] mprotect(0x7feffd223000, 4096, PROT_READ) = 0
+[pid 22450] munmap(0x7feffe561000, 260382) = 0
+[pid 22450] openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] lseek(3, 0, SEEK_CUR)       = 0
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=2401, ...}) = 0
+[pid 22450] mmap(NULL, 2401, PROT_READ, MAP_SHARED, 3, 0) = 0x7feffe5e3000
+[pid 22450] lseek(3, 2401, SEEK_SET)    = 2401
+[pid 22450] munmap(0x7feffe5e3000, 2401) = 0
+[pid 22450] close(3)                    = 0
+[pid 22450] socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+[pid 22450] connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+[pid 22450] close(3)                    = 0
+[pid 22450] socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+[pid 22450] connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+[pid 22450] close(3)                    = 0
+[pid 22450] openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] lseek(3, 0, SEEK_CUR)       = 0
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=945, ...}) = 0
+[pid 22450] mmap(NULL, 945, PROT_READ, MAP_SHARED, 3, 0) = 0x7feffe5e3000
+[pid 22450] lseek(3, 945, SEEK_SET)     = 945
+[pid 22450] munmap(0x7feffe5e3000, 945) = 0
+[pid 22450] close(3)                    = 0
+[pid 22450] getgroups(0, NULL)          = 8
+[pid 22450] getgroups(8, [4, 24, 27, 30, 46, 116, 126, 1000]) = 8
+[pid 22450] openat(AT_FDCWD, "/proc/sys/kernel/ngroups_max", O_RDONLY) = 3
+[pid 22450] read(3, "65536\n", 31)      = 6
+[pid 22450] close(3)                    = 0
+[pid 22450] openat(AT_FDCWD, "/proc/sys/kernel/ngroups_max", O_RDONLY) = 3
+[pid 22450] read(3, "65536\n", 31)      = 6
+[pid 22450] close(3)                    = 0
+[pid 22450] openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] lseek(3, 0, SEEK_CUR)       = 0
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=945, ...}) = 0
+[pid 22450] mmap(NULL, 945, PROT_READ, MAP_SHARED, 3, 0) = 0x7feffe5e3000
+[pid 22450] lseek(3, 945, SEEK_SET)     = 945
+[pid 22450] munmap(0x7feffe5e3000, 945) = 0
+[pid 22450] close(3)                    = 0
+[pid 22450] openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] lseek(3, 0, SEEK_CUR)       = 0
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=945, ...}) = 0
+[pid 22450] mmap(NULL, 945, PROT_READ, MAP_SHARED, 3, 0) = 0x7feffe5e3000
+[pid 22450] lseek(3, 945, SEEK_SET)     = 945
+[pid 22450] munmap(0x7feffe5e3000, 945) = 0
+[pid 22450] close(3)                    = 0
+[pid 22450] openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] lseek(3, 0, SEEK_CUR)       = 0
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=945, ...}) = 0
+[pid 22450] mmap(NULL, 945, PROT_READ, MAP_SHARED, 3, 0) = 0x7feffe5e3000
+[pid 22450] lseek(3, 945, SEEK_SET)     = 945
+[pid 22450] munmap(0x7feffe5e3000, 945) = 0
+[pid 22450] close(3)                    = 0
+[pid 22450] openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] lseek(3, 0, SEEK_CUR)       = 0
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=945, ...}) = 0
+[pid 22450] mmap(NULL, 945, PROT_READ, MAP_SHARED, 3, 0) = 0x7feffe5e3000
+[pid 22450] lseek(3, 945, SEEK_SET)     = 945
+[pid 22450] munmap(0x7feffe5e3000, 945) = 0
+[pid 22450] close(3)                    = 0
+[pid 22450] openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] lseek(3, 0, SEEK_CUR)       = 0
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=945, ...}) = 0
+[pid 22450] mmap(NULL, 945, PROT_READ, MAP_SHARED, 3, 0) = 0x7feffe5e3000
+[pid 22450] lseek(3, 945, SEEK_SET)     = 945
+[pid 22450] munmap(0x7feffe5e3000, 945) = 0
+[pid 22450] close(3)                    = 0
+[pid 22450] openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] lseek(3, 0, SEEK_CUR)       = 0
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=945, ...}) = 0
+[pid 22450] mmap(NULL, 945, PROT_READ, MAP_SHARED, 3, 0) = 0x7feffe5e3000
+[pid 22450] lseek(3, 945, SEEK_SET)     = 945
+[pid 22450] munmap(0x7feffe5e3000, 945) = 0
+[pid 22450] close(3)                    = 0
+[pid 22450] openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] lseek(3, 0, SEEK_CUR)       = 0
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=945, ...}) = 0
+[pid 22450] mmap(NULL, 945, PROT_READ, MAP_SHARED, 3, 0) = 0x7feffe5e3000
+[pid 22450] lseek(3, 945, SEEK_SET)     = 945
+[pid 22450] munmap(0x7feffe5e3000, 945) = 0
+[pid 22450] close(3)                    = 0
+[pid 22450] openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 3
+[pid 22450] lseek(3, 0, SEEK_CUR)       = 0
+[pid 22450] fstat(3, {st_mode=S_IFREG|0644, st_size=945, ...}) = 0
+[pid 22450] mmap(NULL, 945, PROT_READ, MAP_SHARED, 3, 0) = 0x7feffe5e3000
+[pid 22450] lseek(3, 945, SEEK_SET)     = 945
+[pid 22450] munmap(0x7feffe5e3000, 945) = 0
+[pid 22450] close(3)                    = 0
+[pid 22450] write(1, "uid=1000(fusy) gid=1000(fusy) gr"..., 123uid=1000(fusy) gid=1000(fusy) groups=1000(fusy),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),116(lpadmin),126(sambashare)
+) = 123
+[pid 22450] close(1)                    = 0
+[pid 22450] close(2)                    = 0
+[pid 22450] exit_group(0)               = ?
+[pid 22450] +++ exited with 0 +++
+[pid 22449] <... wait4 resumed> [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 22450
+[pid 22449] --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=22450, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+[pid 22449] rt_sigreturn({mask=[]})     = 22450
+[pid 22449] exit_group(0)               = ?
+[pid 22449] +++ exited with 0 +++
+<... wait4 resumed> [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 22449
+rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, NULL, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=22449, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+fstat(1, {st_mode=S_IFREG|0644, st_size=39273, ...}) = 0
+brk(NULL)                               = 0x5574e6fc7000
+brk(0x5574e6fe8000)                     = 0x5574e6fe8000
+rt_sigaction(SIGINT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+clone(strace: Process 22451 attached
+child_stack=NULL, flags=CLONE_PARENT_SETTID|SIGCHLD, parent_tidptr=0x7ffd4eb08a8c) = 22451
+[pid 22446] wait4(22451,  <unfinished ...>
+[pid 22451] rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, NULL, 8) = 0
+[pid 22451] rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, NULL, 8) = 0
+[pid 22451] rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+[pid 22451] execve("/bin/sh", ["sh", "-c", "ls ."], 0x7ffd4eb09120 /* 65 vars */) = 0
+[pid 22451] brk(NULL)                   = 0x561c0e008000
+[pid 22451] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22451] access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+[pid 22451] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+[pid 22451] fstat(3, {st_mode=S_IFREG|0644, st_size=260382, ...}) = 0
+[pid 22451] mmap(NULL, 260382, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f6ab5be4000
+[pid 22451] close(3)                    = 0
+[pid 22451] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22451] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+[pid 22451] read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20\35\2\0\0\0\0\0"..., 832) = 832
+[pid 22451] fstat(3, {st_mode=S_IFREG|0755, st_size=2030928, ...}) = 0
+[pid 22451] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6ab5be2000
+[pid 22451] mmap(NULL, 4131552, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f6ab560a000
+[pid 22451] mprotect(0x7f6ab57f1000, 2097152, PROT_NONE) = 0
+[pid 22451] mmap(0x7f6ab59f1000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e7000) = 0x7f6ab59f1000
+[pid 22451] mmap(0x7f6ab59f7000, 15072, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f6ab59f7000
+[pid 22451] close(3)                    = 0
+[pid 22451] arch_prctl(ARCH_SET_FS, 0x7f6ab5be3540) = 0
+[pid 22451] mprotect(0x7f6ab59f1000, 16384, PROT_READ) = 0
+[pid 22451] mprotect(0x561c0d560000, 8192, PROT_READ) = 0
+[pid 22451] mprotect(0x7f6ab5c24000, 4096, PROT_READ) = 0
+[pid 22451] munmap(0x7f6ab5be4000, 260382) = 0
+[pid 22451] getuid()                    = 1000
+[pid 22451] getgid()                    = 1000
+[pid 22451] getpid()                    = 22451
+[pid 22451] rt_sigaction(SIGCHLD, {sa_handler=0x561c0d357200, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f6ab5649040}, NULL, 8) = 0
+[pid 22451] geteuid()                   = 1000
+[pid 22451] brk(NULL)                   = 0x561c0e008000
+[pid 22451] brk(0x561c0e029000)         = 0x561c0e029000
+[pid 22451] getppid()                   = 22446
+[pid 22451] stat("/home/fusy/Documents/SCR2021/04_laboratory_23_marzo", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+[pid 22451] stat(".", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+[pid 22451] geteuid()                   = 1000
+[pid 22451] getegid()                   = 1000
+[pid 22451] rt_sigaction(SIGINT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 22451] rt_sigaction(SIGINT, {sa_handler=0x561c0d357200, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f6ab5649040}, NULL, 8) = 0
+[pid 22451] rt_sigaction(SIGQUIT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 22451] rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f6ab5649040}, NULL, 8) = 0
+[pid 22451] rt_sigaction(SIGTERM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 22451] rt_sigaction(SIGTERM, {sa_handler=SIG_DFL, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f6ab5649040}, NULL, 8) = 0
+[pid 22451] stat("/usr/local/sbin/ls", 0x7ffd42c04b60) = -1 ENOENT (No such file or directory)
+[pid 22451] stat("/usr/local/bin/ls", 0x7ffd42c04b60) = -1 ENOENT (No such file or directory)
+[pid 22451] stat("/usr/sbin/ls", 0x7ffd42c04b60) = -1 ENOENT (No such file or directory)
+[pid 22451] stat("/usr/bin/ls", 0x7ffd42c04b60) = -1 ENOENT (No such file or directory)
+[pid 22451] stat("/sbin/ls", 0x7ffd42c04b60) = -1 ENOENT (No such file or directory)
+[pid 22451] stat("/bin/ls", {st_mode=S_IFREG|0755, st_size=133792, ...}) = 0
+[pid 22451] clone(strace: Process 22452 attached
+child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f6ab5be3810) = 22452
+[pid 22451] wait4(-1,  <unfinished ...>
+[pid 22452] execve("/bin/ls", ["ls", "."], 0x561c0e009098 /* 65 vars */) = 0
+[pid 22452] brk(NULL)                   = 0x55ddb7f73000
+[pid 22452] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22452] access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+[pid 22452] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+[pid 22452] fstat(3, {st_mode=S_IFREG|0644, st_size=260382, ...}) = 0
+[pid 22452] mmap(NULL, 260382, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f15e6cab000
+[pid 22452] close(3)                    = 0
+[pid 22452] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22452] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libselinux.so.1", O_RDONLY|O_CLOEXEC) = 3
+[pid 22452] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20b\0\0\0\0\0\0"..., 832) = 832
+[pid 22452] fstat(3, {st_mode=S_IFREG|0644, st_size=154832, ...}) = 0
+[pid 22452] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f15e6ca9000
+[pid 22452] mmap(NULL, 2259152, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f15e689a000
+[pid 22452] mprotect(0x7f15e68bf000, 2093056, PROT_NONE) = 0
+[pid 22452] mmap(0x7f15e6abe000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x24000) = 0x7f15e6abe000
+[pid 22452] mmap(0x7f15e6ac0000, 6352, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f15e6ac0000
+[pid 22452] close(3)                    = 0
+[pid 22452] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22452] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+[pid 22452] read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20\35\2\0\0\0\0\0"..., 832) = 832
+[pid 22452] fstat(3, {st_mode=S_IFREG|0755, st_size=2030928, ...}) = 0
+[pid 22452] mmap(NULL, 4131552, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f15e64a9000
+[pid 22452] mprotect(0x7f15e6690000, 2097152, PROT_NONE) = 0
+[pid 22452] mmap(0x7f15e6890000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e7000) = 0x7f15e6890000
+[pid 22452] mmap(0x7f15e6896000, 15072, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f15e6896000
+[pid 22452] close(3)                    = 0
+[pid 22452] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22452] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpcre.so.3", O_RDONLY|O_CLOEXEC) = 3
+[pid 22452] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 \25\0\0\0\0\0\0"..., 832) = 832
+[pid 22452] fstat(3, {st_mode=S_IFREG|0644, st_size=464824, ...}) = 0
+[pid 22452] mmap(NULL, 2560264, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f15e6237000
+[pid 22452] mprotect(0x7f15e62a7000, 2097152, PROT_NONE) = 0
+[pid 22452] mmap(0x7f15e64a7000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x70000) = 0x7f15e64a7000
+[pid 22452] close(3)                    = 0
+[pid 22452] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22452] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libdl.so.2", O_RDONLY|O_CLOEXEC) = 3
+[pid 22452] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\16\0\0\0\0\0\0"..., 832) = 832
+[pid 22452] fstat(3, {st_mode=S_IFREG|0644, st_size=14560, ...}) = 0
+[pid 22452] mmap(NULL, 2109712, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f15e6033000
+[pid 22452] mprotect(0x7f15e6036000, 2093056, PROT_NONE) = 0
+[pid 22452] mmap(0x7f15e6235000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f15e6235000
+[pid 22452] close(3)                    = 0
+[pid 22452] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22452] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3
+[pid 22452] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0000b\0\0\0\0\0\0"..., 832) = 832
+[pid 22452] fstat(3, {st_mode=S_IFREG|0755, st_size=144976, ...}) = 0
+[pid 22452] mmap(NULL, 2221184, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f15e5e14000
+[pid 22452] mprotect(0x7f15e5e2e000, 2093056, PROT_NONE) = 0
+[pid 22452] mmap(0x7f15e602d000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x19000) = 0x7f15e602d000
+[pid 22452] mmap(0x7f15e602f000, 13440, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f15e602f000
+[pid 22452] close(3)                    = 0
+[pid 22452] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f15e6ca7000
+[pid 22452] arch_prctl(ARCH_SET_FS, 0x7f15e6ca8040) = 0
+[pid 22452] mprotect(0x7f15e6890000, 16384, PROT_READ) = 0
+[pid 22452] mprotect(0x7f15e602d000, 4096, PROT_READ) = 0
+[pid 22452] mprotect(0x7f15e6235000, 4096, PROT_READ) = 0
+[pid 22452] mprotect(0x7f15e64a7000, 4096, PROT_READ) = 0
+[pid 22452] mprotect(0x7f15e6abe000, 4096, PROT_READ) = 0
+[pid 22452] mprotect(0x55ddb6a56000, 8192, PROT_READ) = 0
+[pid 22452] mprotect(0x7f15e6ceb000, 4096, PROT_READ) = 0
+[pid 22452] munmap(0x7f15e6cab000, 260382) = 0
+[pid 22452] set_tid_address(0x7f15e6ca8310) = 22452
+[pid 22452] set_robust_list(0x7f15e6ca8320, 24) = 0
+[pid 22452] rt_sigaction(SIGRTMIN, {sa_handler=0x7f15e5e19cb0, sa_mask=[], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f15e5e26980}, NULL, 8) = 0
+[pid 22452] rt_sigaction(SIGRT_1, {sa_handler=0x7f15e5e19d50, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART|SA_SIGINFO, sa_restorer=0x7f15e5e26980}, NULL, 8) = 0
+[pid 22452] rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+[pid 22452] prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+[pid 22452] statfs("/sys/fs/selinux", 0x7ffe30bc3f50) = -1 ENOENT (No such file or directory)
+[pid 22452] statfs("/selinux", 0x7ffe30bc3f50) = -1 ENOENT (No such file or directory)
+[pid 22452] brk(NULL)                   = 0x55ddb7f73000
+[pid 22452] brk(0x55ddb7f94000)         = 0x55ddb7f94000
+[pid 22452] openat(AT_FDCWD, "/proc/filesystems", O_RDONLY|O_CLOEXEC) = 3
+[pid 22452] fstat(3, {st_mode=S_IFREG|0444, st_size=0, ...}) = 0
+[pid 22452] read(3, "nodev\tsysfs\nnodev\ttmpfs\nnodev\tbd"..., 1024) = 393
+[pid 22452] read(3, "", 1024)           = 0
+[pid 22452] close(3)                    = 0
+[pid 22452] access("/etc/selinux/config", F_OK) = -1 ENOENT (No such file or directory)
+[pid 22452] openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+[pid 22452] fstat(3, {st_mode=S_IFREG|0644, st_size=3008736, ...}) = 0
+[pid 22452] mmap(NULL, 3008736, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f15e5b35000
+[pid 22452] close(3)                    = 0
+[pid 22452] ioctl(1, TCGETS, 0x7ffe30bc3eb0) = -1 ENOTTY (Inappropriate ioctl for device)
+[pid 22452] ioctl(1, TIOCGWINSZ, 0x7ffe30bc3f80) = -1 ENOTTY (Inappropriate ioctl for device)
+[pid 22452] stat(".", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+[pid 22452] openat(AT_FDCWD, ".", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+[pid 22452] fstat(3, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+[pid 22452] getdents(3, /* 10 entries */, 32768) = 328
+[pid 22452] getdents(3, /* 0 entries */, 32768) = 0
+[pid 22452] close(3)                    = 0
+[pid 22452] fstat(1, {st_mode=S_IFREG|0644, st_size=51544, ...}) = 0
+[pid 22452] write(1, "log-sys.log\nREADME.md\nroot-ls\nro"..., 100log-sys.log
+README.md
+root-ls
+root-ls.c
+root-ls-sys
+root-ls-sys-abs
+root-ls-sys-abs.c
+root-ls-sys.c
+) = 100
+[pid 22452] close(1)                    = 0
+[pid 22452] close(2)                    = 0
+[pid 22452] exit_group(0)               = ?
+[pid 22452] +++ exited with 0 +++
+[pid 22451] <... wait4 resumed> [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 22452
+[pid 22451] --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=22452, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+[pid 22451] rt_sigreturn({mask=[]})     = 22452
+[pid 22451] exit_group(0)               = ?
+[pid 22451] +++ exited with 0 +++
+<... wait4 resumed> [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 22451
+rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f00c7287040}, NULL, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=22451, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+write(1, "ls .\n", 5ls .
+)                   = 5
+exit_group(0)                           = ?
++++ exited with 0 +++

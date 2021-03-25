@@ -9,7 +9,7 @@ int main(int argc, char** argv) {
 	system("id");
 
 	//execlp("ls", "ls", argv[1], (const char*) NULL);
-	if (strlen(argv[1])+4 > 1000) return 1;
+	if (argc<2 || strlen(argv[1])+4 > 1000) return 1;
 	char command[1000];
 	sprintf(command, "ls %s", argv[1]);
 	printf("%s\n", command);

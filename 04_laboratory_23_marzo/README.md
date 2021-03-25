@@ -85,3 +85,11 @@ with
 	we can trace everything.
 
 # ESERCIZIO 2
+	```	
+	vedere codice root-ls-sys.c
+	```	
+# ESERCIZIO 2a
+	```	
+	vedere codice root-ls-sys-abs.c
+	```	
+ovviamente, non fa la path expansion
