@@ -8,10 +8,12 @@ int main(int argc, char** argv) {
 	system("whoami");
 	system("id");
 
-	if (argc < 2) return 1;
-
-	execlp("ls", "ls", argv[1], (const char*) NULL);
-	
+	//execlp("ls", "ls", argv[1], (const char*) NULL);
+	if (strlen(argv[1])+4 > 1000) return 1;
+	char command[1000];
+	sprintf(command, "/bin/ls %s", argv[1]);
+	printf("%s\n", command);
+	system(command);
 	// cosa fa execlp? mi permette di eseguire ls essendo root (una volta reso set-UID il programma, dopo chown root)
 
 	// dove lo trova ls?
