@@ -35,9 +35,9 @@ Se mytest viene reso Set-UID, LD_PRELOAD e LD_LIBRARY_PATH vengono ignorate se R
 // this program is vulnerable, cal can be searched as we want if we manipulate
 // the path env variable
 // use execve
-'''
+```
 	int main() { system("cal"); }
-'''
+```
 
 # Attacks via Library (that may use environment variables)
 I programmi usano, come abbiamo visto nel linker, delle librerie esterne. Se le funzioni delle librerie usano delle variabili d'ambiente, ovviamente queste sono vulnerabili all'attacco. <br>
@@ -57,19 +57,20 @@ for example, *buffer overflow* causato da una sprintf che mette una variabile d'
 # SHELLSHOCK
 Definire una funzione in shell code.<br>
 Farsi stampare quella funzione
-'''
+
+```
 $ foo() { echo "Inside function"; }
 $ declare -f foo
 	foo()
 	{
 		echo "Inside function"
 	}
-'''
+```
 Se avessi scritto echo, non mi farebbe vedere niente, perché non è una variabile <br>
 Però posso rimuovere la funzione dalla shell
-'''
+```
 $ unset -f foo
-'''
+```
 
 ### Come si possono passare le funzioni definite in una shell a processi figli?
 * Approccio 1:
