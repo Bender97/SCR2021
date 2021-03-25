@@ -1,5 +1,5 @@
 ## esercizio 1
-strace: system trace. Mostra la sequenza delle system calls fatte da un programma.
+**strace**: system trace. Mostra la sequenza delle system calls fatte da un programma.<br>
 *espansione del path*: tentativi che fa il programma per trovare l'eseguibile richiesto
 
 ```
@@ -29,7 +29,7 @@ File descriptor flags:
 	access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
 	access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
 
-/etc/ld.so.nohwcap
+**/etc/ld.so.nohwcap** <br>
 	When this file is present the dynamic linker will load the non-optimized version of a library, even if the CPU supports the optimized version.
 
 
