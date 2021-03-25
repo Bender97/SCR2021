@@ -7,9 +7,8 @@
 	strace ./root-ls
 ```
 
-execlp -> execve
+*execlp -> execve* <br>
 	tutti gli exec sono dei wrapper per execve. Questa è l'entry point del kernel
-	the 64 vars passed at the end are the environment variables
 
 ## shell creation
 	execve("./root-ls", ["./root-ls", "."], 0x7ffd6dce1eb8 /* 64 vars */) = 0
@@ -42,3 +41,23 @@ File descriptor flags:
 	execve("/usr/bin/ls", ["ls", "."], 0x7ffc7f005810 /* 64 vars */) = -1 ENOENT (No such file or directory)
 	execve("/sbin/ls", ["ls", "."], 0x7ffc7f005810 /* 64 vars */) = -1 ENOENT (No such file or directory)
 	execve("/bin/ls", ["ls", "."], 0x7ffc7f005810 /* 64 vars */) = 0
+
+the 64 vars passed at the end are the environment variables
+
+## memory handling
+ * **brk**:  change data segment size
+ * **mmap**: map files or devices into memory
+ 	* mmap() creates a new mapping in the virtual address space of the calling process
+ 			When a file is mapped to a process address space, *the file can be accessed like an array in the program*
+ 	* example:
+ ```	
+ 		mmap(NULL, 260382, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f8c5768a000
+ ```
+ 		*NULL* -> If addr is NULL, then the kernel chooses the address at which to create the mapping;
+ 				this  is the most portable method of creating a new mapping.
+ 		*260382* -> the length of the mapping (in bytes)
+ 		*PROT_READ* ->  Pages may be read.
+ 		*MAP_PRIVATE* -> Create  a private copy-on-write mapping.  Updates to the mapping
+              			are not visible to other processes mapping the  same  file,  and
+              			are  not carried through to the underlying file.
+        3 -> The file descriptor of the file which has to be mapped.
