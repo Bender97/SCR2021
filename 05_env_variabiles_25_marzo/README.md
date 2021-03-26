@@ -1,7 +1,7 @@
 # Attacks via Dynamic Linker
 linking dinamico: usa le shared library cercando seguendo le variabili d'ambiente
  * **.so** per *Linux*
- * **.dll** per *Lindows*
+ * **.dll** per *Windows*
 
 La libreria è caricata in memoria la prima volta tutta, non c'è una distinzione a livello della singola funzione.<br>
 Poi però grazie alla paginazione può essere che rimanga in memoria solo la/le funzione/i utilizzata.
