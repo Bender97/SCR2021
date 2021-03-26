@@ -33,12 +33,11 @@ Se un programma vuole eseguire un altro programma al suo interno, quello che suc
 L'exec fa un overwrite dello spazio di memoria del processo mettendoci sopra l'eseguibile che si vuole eseguire. (è il figlio, non si perde info del codice di partenza)
 Anche le variabili d'ambiente vengono sovrascritte!! Ecco perché si usa la versione **execve()**, che gliele passa esplicitamente scegliendo.
 
-	(verdere codice main1.c)
-
+`(verdere codice main1.c)`
 modifiche suggerite a main1:
 	non terminare con NULL newenv
 
-```(vedere codice main2.c) ```
+`(vedere codice main2.c) `
 		boh, ho provato e non stampa nulla, come nel caso switch '1'
 
 # Dove stanno in memoria le variabili di ambiente?
@@ -70,12 +69,26 @@ Problema! Se aggiungo una variable d'amb, devo per forza cambiare la struttura d
 
  1) copio la zona 2 (i puntatori di envp) nello heap
  	1) però envp non viene modificato: continua a puntare alla zona 2, ovvero ha la *copia originale* dell'ambiente. Tiene traccia dell'ambiente di partenza.
- 	2) environ ha sempre il riferiemento alla *copia corrente* dell'ambiente
+ 	2) environ ha sempre il riferimento alla *copia corrente* dell'ambiente
  	quindi non c'è modo per avere certezza, usando envp, che punti ad un ambiente originale o modificato: envp non si accorge delle modifiche fatte
  	environ viene aggironata automaticamente ogni volta che viene modificato l'ambiente
  	Perché? envp è una variabile interna al main, il sistema non ha accesso per modificarla. Environ è esterna, il sistema ha accesso e la può aggiornare
 
+`man proc`
+```shell-script
+	/proc/[pid]/environ
+	This file contains the initial environment that was set when the currently executing program was started via execve(2).   The  entries  are
+	separated by null bytes ('\0'), and there may be a null byte at the end.  Thus, to print out the environment of process 1, you would do:
 
+	  $ strings /proc/1/environ
+
+	If,  after  an  execve(2),  the  process modifies its environment (e.g., by calling functions such as putenv(3) or modifying the environ(7)
+	variable directly), this file will not reflect those changes.
+
+	Furthermore, a process may change the memory location that this file refers via prctl(2) operations such as PR_SET_MM_ENV_START.
+
+	Permission to access this file is governed by a ptrace access mode PTRACE_MODE_READ_FSCREDS check; see ptrace(2).
+```
 # Lezione 2
 
 ## variabili d'ambiente e variabili della shell
