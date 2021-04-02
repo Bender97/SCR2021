@@ -34,10 +34,10 @@ Lo stack viene usato anche per i valori di ritorno.
  * i parametri vengono passati in reverse order
 ```
  +12	b 	; (da +12 a +8)
- +8	    a 	; (da  +8 a +4)
+ +8     a 	; (da  +8 a +4)
  +4	    	; return value
  ebp  		; previous frame pointer
- -4	    x 	; (da -4 a -8)	le variabili crescono dopo ebp
+ -4     x 	; (da -4 a -8)	le variabili crescono dopo ebp
  -8     y
 ```
 *assembly x86*: l'architettura intel moderna è stratificata. E' compatibile, ma internamente è risk load store, con una pipeline molto profonda. <br>
