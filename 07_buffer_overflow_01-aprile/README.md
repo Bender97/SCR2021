@@ -35,7 +35,7 @@ Lo stack viene usato anche per i valori di ritorno.
 ```
  +12	b   ; (da +12 a +8)
  +8     a   ; (da  +8 a +4)
- +4	        ; return value
+ +4         ; return value
  ebp  	    ; previous frame pointer
  -4     x   ; (da -4 a -8)	le variabili crescono dopo ebp
  -8     y
