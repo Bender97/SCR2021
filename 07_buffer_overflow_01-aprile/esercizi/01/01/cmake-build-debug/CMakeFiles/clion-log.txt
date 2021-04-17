@@ -1,0 +1,4 @@
+/home/fusy/clion-2020.3.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/fusy/Documents/SCR2021/07_buffer_overflow_01-aprile/esercizi/01/01
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/fusy/Documents/SCR2021/07_buffer_overflow_01-aprile/esercizi/01/01/cmake-build-debug
