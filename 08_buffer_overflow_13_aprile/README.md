@@ -18,13 +18,13 @@ void loop(unsigned char count, unsigned char *inbuf)
 ```
 > from loop.c
 
-if count<8   (e.g., count = 7), it's all ok
+`if count<8   (e.g., count = 7), it's all ok`
 
-when count>=8, buffer overflow:
-	when i=8, inside for loop:
+when count>=8, buffer overflow:<br>
+	when i=8, inside for loop:<br>
 		`buf[8] = inbuf[8]`
 
-BUT &(buf[8]) is equal to &i 
-AND inbuf[8] is some value
+BUT &(buf[8]) is equal to &i <br>
+AND inbuf[8] is some value<br>
 
 so we change the value of the iterator. IF inbuf[8]<count, THEN infinte loop
