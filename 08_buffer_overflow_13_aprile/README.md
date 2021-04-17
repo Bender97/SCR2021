@@ -21,8 +21,8 @@ void loop(unsigned char count, unsigned char *inbuf)
 `if count<8   (e.g., count = 7), it's all ok`
 
 when count>=8, buffer overflow:<br>
-    when i=8, inside for loop:<br>
-        `buf[8] = inbuf[8]`
+-   when i=8, inside for loop:<br>
+-       `buf[8] = inbuf[8]`
 
 BUT &(buf[8]) is equal to &i <br>
 AND inbuf[8] is some value<br>
